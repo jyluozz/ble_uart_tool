@@ -12,7 +12,7 @@
 ### 1.硬件环境
 
 两块Dongle_v1.0开发板
-![](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531211933480.png)
+![](image/硬件环境.png)
 
 芯片占用资源
 			1）GPIO:   
@@ -39,7 +39,7 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 ### 1.主机：
 
-![image-20230531212029518](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531212029518.png)
+![image-20230531212029518](image/主机原理.png)
 
 ​	1）通过串口调试助手，向从机发送命令、或者发送数据，主机通过蓝牙将数据发送给从机
 
@@ -47,7 +47,7 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 ### 2.主机：
 
-![image-20230531212051193](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531212051193.png)
+![image-20230531212051193](image/从机原理.png)
 
 ​	1）从机接收到主机的数据后，通过串口发送给设备
 
@@ -73,15 +73,15 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 ​	1）上电时，主机会从FALSH的0x50000地址读取波特率，如果没有存入波特率，则设置波特率为115200，然后打印自身的波特率。通过蓝牙连接从机，连接成功后，将波特率同步给从机
 
-![](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531221346928.png)
+![](image/主机上电日志.png)
 
 ​	2）从机切换成主机时，会将FALSH中0x50000地址的波特率数据清除，然后自行软件复位。主机波特率将被重置为115200，同时通过蓝牙连接从机，将从机波特率同步为115200
 
-![image-20230531221038343](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531221038343.png)
+![image-20230531221038343](image/主机切换日志.png)
 
 ​	3）电脑向主机发送修改波特率的命令时，主机会将波特率存入FALSH的0x50000地址，然后主机自行软复位。复位后，读取FLASH里的波特率，初始化为FLASH里的波特率，通过蓝牙连接从机，将波特率同步给从机
 
-![](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531222049995.png)
+![](image/电脑向主机发送波特率日志.png)
 
 2）主机上电连接从机，并向从机发送一串字符：1234
 
@@ -89,7 +89,7 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
  						->从机自行软复位 -> 断开连接- > 重新连接 -> 发送数据
 
-![image-20230531223953970](../../../../../../../Users/luo/AppData/Roaming/Typora/typora-user-images/image-20230531223953970.png)
+![image-20230531223953970](image/主机上电连接从机.png)
 
 ## 运行工程
 
@@ -97,19 +97,19 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 1）主机连接电脑：
 
-![](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531214821541.png)
+![](image/主机实物连接图.png)
 
 2）从机连接设备：
 
-![](C:\Users\luo\AppData\Roaming\Typora\typora-user-images\image-20230531214805351.png)
+![](image/从机实物连接图.png)
 
 
 
 ### 2.编译并烧录代码
 
 编译工程并将生成的 lvgl_lcd_keyboard\build\lm3050\lvgl.hex 文件烧录到开发板
-![image-20230529161926138](../../../../../../../Users/luo/AppData/Roaming/Typora/typora-user-images/image-20230529161926138.png)
-![image-20230529161933987](../../../../../../../Users/luo/AppData/Roaming/Typora/typora-user-images/image-20230529161933987.png)
+![image-20230529161926138](image/编译.png)
+![image-20230529161933987](image/烧录.png)
 
 ### 3.运行现象
 
