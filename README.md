@@ -31,9 +31,9 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 1）VsCode和J-Link烧录软件安装教程：[VSCode — Linkedsemi Documentation Center 文档 (ls-doc.readthedocs.io)](https://ls-doc.readthedocs.io/zh_CN/latest/src/sdk/getting_started/vscode.html)
 
-2）uart_ble_tool代码K下载地址：
+2）uart_ble_tool代码K下载地址：[jyluozz/ble_uart_tool: ble蓝牙串口调试工具 (github.com)](https://github.com/jyluozz/ble_uart_tool)
 
-
+3）代码路径：ble_uart_tool\examples\ble\ble_single_role
 
 ## 工作原理
 
