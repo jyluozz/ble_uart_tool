@@ -33,11 +33,15 @@ VsCode、LM3050 SDK、J-Link烧录软件
 
 2）代码路径：ble_uart_tool\ble_single_role
 3）文档结构
+
+```c
 +-- doc  	//原理图文件
 +-- hal_driver 	//驱动文件
 +-- module	//功能模块
 +-- project	//工程代码
 +-- soc		//芯片
+```
+
 ## 工作原理
 
 ### 1.主机：
