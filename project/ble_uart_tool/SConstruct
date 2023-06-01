@@ -1,0 +1,19 @@
+'''
+Author: luojunyang jyluo@linkedsemi.com
+Date: 2023-05-31 22:31:16
+LastEditors: luojunyang jyluo@linkedsemi.com
+LastEditTime: 2023-06-01 09:33:47
+FilePath: \ble_uart_tool\project\ble_uart_tool_gcc\SConstruct
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
+import os
+env = Environment(ENV = os.environ)
+env['SDK_ROOT'] = Dir('../../')
+env.SConscript(env['SDK_ROOT'].File('soc/SConscript'),exports=['env'])
+src = [    
+    'main.c'
+]
+inc = [
+    '.'
+]
+env.app_build('ble_uart_tool_gcc',src,inc)
